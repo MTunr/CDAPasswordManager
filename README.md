@@ -1,2 +1,4 @@
 # CDAPasswordManager
-Local Password Manager using CDA
+## Local Password Manager using CDA
+
+A password manager implemented in Java!
