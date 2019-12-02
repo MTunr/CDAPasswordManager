@@ -19,6 +19,9 @@
 *.tar.gz
 *.rar
 
+#ignore bin and debug files#
+out/
+
 # Ignore .idea #
 .idea
 .idea/workspace.xml
