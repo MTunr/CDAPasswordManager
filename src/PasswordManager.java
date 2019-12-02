@@ -2,40 +2,40 @@ import javax.swing.*;
 
 public class PasswordManager{
     public static void main(String[] args) {
-        debugUI();
+        App passwordManagerApp = new App();
+        SwingUtilities.invokeLater(passwordManagerApp);
     }
-
-    private static void debugUI(){
-        AppWindow window = new AppWindow();
-        SwingUtilities.invokeLater(window);
-    }
-
 }
 
-class AppWindow implements Runnable{
-
+/**
+ * Entire application runs on App.
+ * class is invoked by main to run, that's it.
+ */
+class App implements Runnable{
     /**
      * runs entire UI of application.
      */
     public void run(){
-        createWindow();
-        System.out.println("Hello");
-    }
-
-    /**
-     * Creates blank window
-     * @pre-condition: none
-     * @post-condition: new empty JFrame window is created and displayed.
-     */
-    void createWindow(){
-        // Window size
         final int WINDOW_HEIGHT = 500;
         final int WINDOW_WIDTH = 500;
-
-        // Generate JFrame from swing
-        JFrame AppWindow = new JFrame();
-        AppWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        AppWindow.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-        AppWindow.setVisible(true);
+        // Create new empty window
+        MainFrame appWindow = new MainFrame(WINDOW_WIDTH, WINDOW_HEIGHT);
     }
+}
+
+/**
+ * Default frame class to generate windows.
+ */
+class MainFrame extends JFrame{
+    /**
+     * Frame constructor class
+     * @param windowWidth width of window in pixels
+     * @param windowHeight height of window in pixels
+     */
+    public MainFrame(int windowWidth, int windowHeight){
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setSize(windowWidth, windowHeight);
+        setVisible(true);
+    }
+
 }

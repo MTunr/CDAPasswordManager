@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b428abc3-9ccc-4eeb-a1de-b86ff405cc52" name="Default Changelist" comment="Add Debugger for CDA.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b428abc3-9ccc-4eeb-a1de-b86ff405cc52" name="Default Changelist" comment="Add Account, AccountList, CDA, and FileParser classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PasswordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PasswordManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +37,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Application.CDADebugger">
-    <configuration name="CDADebugger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CDADebugger" />
-      <module name="CDAPasswordManager" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="PasswordManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PasswordManager" />
       <module name="CDAPasswordManager" />
@@ -54,7 +47,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CDADebugger" />
         <item itemvalue="Application.PasswordManager" />
       </list>
     </recent_temporary>
@@ -85,6 +77,7 @@
       <workItem from="1575092216405" duration="133000" />
       <workItem from="1575092842152" duration="605000" />
       <workItem from="1575242303651" duration="1961000" />
+      <workItem from="1575244797298" duration="837000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1575092976879</created>
@@ -100,21 +93,7 @@
       <option name="project" value="LOCAL" />
       <updated>1575093213341</updated>
     </task>
-    <task id="LOCAL-00003" summary="Small changes in CDA and an updated entry to gitignore">
-      <created>1575245007173</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1575245007173</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add Debugger for CDA.">
-      <created>1575247001265</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1575247001265</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,59 +102,37 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Add Account, AccountList, CDA, and FileParser classes" />
-    <MESSAGE value="Small changes in CDA and an updated entry to gitignore" />
-    <MESSAGE value="Add Debugger for CDA." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Debugger for CDA." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Account, AccountList, CDA, and FileParser classes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="7" width="969" height="811" key="CommitChangelistDialog2" timestamp="1575247097657">
+    <state x="337" y="7" width="969" height="811" key="CommitChangelistDialog2" timestamp="1575242961114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="337" y="7" width="969" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575092369856" />
-    <state x="337" y="7" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575247097657" />
-    <state x="147" y="66" key="DiffContextDialog" timestamp="1575247041382">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="147" y="66" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1575247041381" />
+    <state x="337" y="7" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575242961114" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1575092042921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575092042921" />
-    <state width="746" height="214" key="GridCell.Tab.0.bottom" timestamp="1575246985847">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="746" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575246985847" />
-    <state width="746" height="214" key="GridCell.Tab.0.center" timestamp="1575246985846">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="746" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1575246985846" />
-    <state width="746" height="214" key="GridCell.Tab.0.left" timestamp="1575246985846">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="746" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1575246985846" />
-    <state width="746" height="214" key="GridCell.Tab.0.right" timestamp="1575246985847">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="746" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1575246985847" />
     <state x="277" y="59" key="SettingsEditor" timestamp="1575243042748">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1575243042748" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575247019813">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575242964431">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575247019813" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575242964431" />
     <state x="470" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1575244800781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575244800781" />
-    <state x="470" y="208" key="git4idea.merge.GitPullDialog" timestamp="1575247024458">
+    <state x="470" y="208" key="git4idea.merge.GitPullDialog" timestamp="1575243045171">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="470" y="208" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1575247024458" />
-    <state x="430" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1575246553474">
+    <state x="470" y="208" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1575243045171" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1575243270975">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="430" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1575246553474" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1575243270975" />
   </component>
 </project>
