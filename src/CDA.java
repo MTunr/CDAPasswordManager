@@ -90,7 +90,7 @@ public class CDA {
     /** TODO: Move to a string manipulation class
      * Reverses a given string
      * @param aString The string to reverse
-     * @return THe reversed string
+     * @return The reversed string
      */
     public String reverse(String aString) {
         String reversed = "";
