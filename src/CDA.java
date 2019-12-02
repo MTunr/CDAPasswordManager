@@ -3,14 +3,13 @@
  * CDA is a very slow string only encryption algorithm
  * that takes in a string and returns another string
  *
- *
- *
  * @author Jheng Ch'ng
  *
  * Date: 2/12/2019
  */
 public class CDA {
     private static final int DEFAULT_SEED = 68867;
+    private static final int DEFAULT_KEY_HASH_LENGTH = 50;
     private int seed;
 
     /**
@@ -48,5 +47,12 @@ public class CDA {
         return cipherText;
     }
 
+    /**
+     * This class expands a given key into a fixed length string.
+     * @return an Integer of a fixed length.
+     */
+    public int keyExpander(){
+        return 0;
+    }
 
 }
