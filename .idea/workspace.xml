@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b428abc3-9ccc-4eeb-a1de-b86ff405cc52" name="Default Changelist" comment="Add Account, AccountList, CDA, and FileParser classes">
+      <change afterPath="$PROJECT_DIR$/src/uicomponents/SearchBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CDAPasswordManager/PasswordManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CDAPasswordManager/PasswordManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PasswordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PasswordManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +79,7 @@
       <workItem from="1575092216405" duration="133000" />
       <workItem from="1575092842152" duration="605000" />
       <workItem from="1575242303651" duration="1961000" />
-      <workItem from="1575244797298" duration="837000" />
+      <workItem from="1575244797298" duration="6608000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1575092976879</created>
@@ -114,6 +116,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575092042921" />
+    <state width="1493" height="76" key="GridCell.Tab.0.bottom" timestamp="1575253448867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="76" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575253448867" />
+    <state width="1493" height="76" key="GridCell.Tab.0.center" timestamp="1575253448867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="76" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575253448867" />
+    <state width="1493" height="76" key="GridCell.Tab.0.left" timestamp="1575253448867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="76" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575253448867" />
+    <state width="1493" height="76" key="GridCell.Tab.0.right" timestamp="1575253448867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="76" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575253448867" />
     <state x="277" y="59" key="SettingsEditor" timestamp="1575243042748">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -130,9 +148,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="470" y="208" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1575243045171" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1575243270975">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="431" y="153" width="672" height="670" key="search.everywhere.popup" timestamp="1575253502846">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="431" y="153" width="672" height="670" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575253502846" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1575243270975" />
   </component>
 </project>
