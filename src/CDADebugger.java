@@ -12,7 +12,7 @@ import java.lang.*;
 public class CDADebugger {
     public static void main(String[] args) {
         CDA e = new CDA();
-        System.out.println(e.encrypt("hello world","abc"));
+        System.out.println(e.encrypt("a going".repeat(1000),"aa"));
 
     }
 }

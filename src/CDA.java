@@ -58,31 +58,18 @@ public class CDA {
         // Instantiating Random with the long hashed key;
         rand = new Random(shrunkHashedKey);
 
-//        rand.ints(plainText.length(),0,MAX_CHARACTER_SET_SIZE).forEach(currentOffset -> {
-//            System.out.println(currentOffset);
-//
-//
-//            rand.setSeed(keyHasher(output).longValue());
-//        });
-
+        /*
+        Substitution happens here.
+        For each character substituted, a new seed for will be set using the last 10 characters of the encrypted text
+        if available. This would ensure the avalanche affect.
+        TODO: Backwards avalanche?
+         */
         for (int currentIndex = 0; currentIndex < plainText.length(); currentIndex++){
-//            System.out.println(rand.nextInt(MAX_CHARACTER_SET_SIZE));
-
             output += offsetChar(plainText.charAt(currentIndex),rand.nextInt(MAX_CHARACTER_SET_SIZE));
-
+            rand.setSeed(keyHasher(output.substring(currentIndex < 10 ? 0 : currentIndex - 10)+shrunkHashedKey).longValue());
         }
 
         return output;
-    }
-
-    /**
-     * Offsets a given character by n characters
-     * @param a The character to offset from
-     * @param offset Offset length
-     * @return offset character
-     */
-    public char offsetChar(char a, long offset){
-        return (char) (a + offset);
     }
 
     /**
@@ -97,25 +84,42 @@ public class CDA {
     }
 
     /**
+     * Offsets a given character by n characters
+     * @param a The character to offset from
+     * @param offset Offset length
+     * @return offset character
+     */
+    public char offsetChar(char a, long offset){
+        return (char) (a + offset);
+    }
+
+
+
+    /**
      * This method hashes a given key into a fixed length string.
      *
      * @return an Integer of a fixed length.
      */
     public BigInteger keyHasher(String key) {
+        if (key.equals("")){
+            key = " ";
+        }
+
         BigInteger hash = BigInteger.valueOf(1);
 
-        int oddCounter = 0;
-        while (key.length() < DEFAULT_KEY_HASH_LENGTH) {
-            key += (oddCounter % 2 == 0) ? reverse(key) : key;
-            oddCounter++;
-        }
+        // This could be a bad approach! Expanding keys by duplicating them may cause
+        // different keys to collide
+        // Removed to prevent collisions //
+//        int oddCounter = 0;
+//        while (key.length() < DEFAULT_KEY_HASH_LENGTH) {
+//            key += (oddCounter % 2 == 0) ? reverse(key) : key;
+//            oddCounter++;
+//        }
 
         for (int i = 0; i < key.length(); i++) {
             hash = hash.add(BigInteger.valueOf(key.charAt(i)).pow(i+1));
-//            System.out.println(hash);
         }
 
-//        return hash;
         return shortenBigInteger(hash, DEFAULT_KEY_HASH_LENGTH);
     }
 
