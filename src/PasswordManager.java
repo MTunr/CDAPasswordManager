@@ -1,6 +1,6 @@
-import uicomponents.SearchBar;
+import uicomponents.LoginFrame;
+
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Main class
@@ -14,22 +14,22 @@ public class PasswordManager{
 
 /**
  * Entire application runs on App.
- * class is invoked by main to run, that's it.
+ * class is invoked by main to run on a single thread.
  */
 class App implements Runnable{
+
     /**
-     * runs entire UI of application.
+     * main method. Deals with all execution and UI controls.
      */
     public void run(){
-        final int WINDOW_HEIGHT = 500;
-        final int WINDOW_WIDTH = 500;
-        // Create new empty window
-        MainFrame appWindow = new MainFrame(WINDOW_WIDTH, WINDOW_HEIGHT);
-        setMainScreen(appWindow);
+        login();
     }
 
     // Functionality methods
-    void login(){}
+    void login(){
+        LoginFrame loginFrame = new LoginFrame();
+    }
+
     void logout(){}
     void addAccount(){}
     void deleteAccount(){}
@@ -37,31 +37,8 @@ class App implements Runnable{
 
     // UI generation methods
     void setLoginScreen(){}
-    void popupDeleteWindow(){}
-    void popupAddWindow(){}
-    void popupConfirmWindow(){}
-
-    //TODO: refactor, recode and basically re-write this entire method using uicomponents.
-    void setMainScreen(MainFrame appWindow){
-        appWindow.setLayout(new BorderLayout());
-        SearchBar mainSearchBar = new SearchBar();
-        appWindow.add(mainSearchBar, BorderLayout.PAGE_START);
-    }
-}
-
-//TODO: move this to uicomponents.
-/**
- * Default frame class to generate windows.
- */
-class MainFrame extends JFrame{
-    /**
-     * Frame constructor class
-     * @param windowWidth width of window in pixels
-     * @param windowHeight height of window in pixels
-     */
-    public MainFrame(int windowWidth, int windowHeight){
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(windowWidth, windowHeight);
-        setVisible(true);
-    }
+    void setDeleteWindow(){}
+    void setAddWindow(){}
+    void setConfirmWindow(){}
+    void setMainWindow(){}
 }
