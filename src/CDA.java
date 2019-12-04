@@ -4,31 +4,36 @@
  * CDA is a very slow string only encryption algorithm
  * that takes in a string and returns another string
  *
+ * Update: 4/12/2019
+ * For now CDA only supports unicode of 0 - 1000
+ *
  * Author: Jheng Jheng Ch'ng
  */
 import java.lang.*;
-import java.lang.Math;
 import java.math.BigInteger;
+import java.util.Random;
 
 public class CDA {
-    private static final int DEFAULT_SEED = 68867;
-    private static final int DEFAULT_KEY_HASH_LENGTH = 10;
-    private int seed;
+    private static final int DEFAULT_ITERATIONS = 64;
+    private static final int DEFAULT_KEY_HASH_LENGTH = 30;
+    private static final int MAX_CHARACTER_SET_SIZE = 1000;
+    private int iterations;
+    private Random rand;
 
     /**
      * Constructor for the CDA algorithm.
      *
-     * @param seed Seed for the CDA instance
+     * @param iterations bit size for the CDA instance
      */
-    public CDA(int seed) {
-        this.seed = seed;
+    public CDA(int iterations) {
+        this.iterations = iterations;
     }
 
     /**
-     * Default constructor for when a seed does not exist.
+     * Default constructor for when a specified number does not exist
      */
     public CDA() {
-        this.seed = DEFAULT_SEED;
+        this.iterations = DEFAULT_ITERATIONS;
     }
 
     /**
@@ -39,7 +44,45 @@ public class CDA {
      * @return The encrypted plaintext as a string
      */
     public String encrypt(String plainText, String key) {
-        return plainText;
+        String output = "";
+
+        // Hashing the key
+        BigInteger hashedKey = keyHasher(key);
+
+        /*
+        long is not able to hold a value as big as BigInteger,
+        so java shrinks it to a smaller container
+         */
+        long shrunkHashedKey = hashedKey.longValue();
+
+        // Instantiating Random with the long hashed key;
+        rand = new Random(shrunkHashedKey);
+
+//        rand.ints(plainText.length(),0,MAX_CHARACTER_SET_SIZE).forEach(currentOffset -> {
+//            System.out.println(currentOffset);
+//
+//
+//            rand.setSeed(keyHasher(output).longValue());
+//        });
+
+        for (int currentIndex = 0; currentIndex < plainText.length(); currentIndex++){
+//            System.out.println(rand.nextInt(MAX_CHARACTER_SET_SIZE));
+
+            output += offsetChar(plainText.charAt(currentIndex),rand.nextInt(MAX_CHARACTER_SET_SIZE));
+
+        }
+
+        return output;
+    }
+
+    /**
+     * Offsets a given character by n characters
+     * @param a The character to offset from
+     * @param offset Offset length
+     * @return offset character
+     */
+    public char offsetChar(char a, long offset){
+        return (char) (a + offset);
     }
 
     /**
@@ -54,11 +97,11 @@ public class CDA {
     }
 
     /**
-     * This class expands a given key into a fixed length string.
+     * This method hashes a given key into a fixed length string.
      *
      * @return an Integer of a fixed length.
      */
-    public BigInteger keyExpander(String key) {
+    public BigInteger keyHasher(String key) {
         BigInteger hash = BigInteger.valueOf(1);
 
         int oddCounter = 0;
@@ -72,8 +115,8 @@ public class CDA {
 //            System.out.println(hash);
         }
 
-        return hash;
-//        return shortenBigInteger(hash, DEFAULT_KEY_HASH_LENGTH);
+//        return hash;
+        return shortenBigInteger(hash, DEFAULT_KEY_HASH_LENGTH);
     }
 
     /**
