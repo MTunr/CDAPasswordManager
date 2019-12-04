@@ -15,6 +15,6 @@ public class CDADebugger {
         //803851191445120 - hello
         //866474805345920 - gello
         //
-//        System.out.println("helldddd".hashCode());
+        System.out.println("helldddd".hashCode());
     }
 }
