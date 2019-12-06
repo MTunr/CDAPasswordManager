@@ -6,11 +6,13 @@ public class LoginFrame extends JFrame{
     private JButton loginButton;
     private JTextField textField1;
     private JPasswordField passwordField1;
+    private JLabel invalidLabel;
 
     private PasswordManager passwordManager;
 
     /**
      * Constructor class: creates login window
+     * @param caller reference to object that created this class
      */
     public LoginFrame(PasswordManager caller){
 
@@ -40,4 +42,10 @@ public class LoginFrame extends JFrame{
         }
     }
 
+    /**
+     * Displays an error message if login is invalid
+     */
+    public void displayWrongLogin(){
+        invalidLabel.setText("Invalid login details");
+    }
 }
