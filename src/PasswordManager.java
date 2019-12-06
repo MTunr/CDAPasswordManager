@@ -1,26 +1,27 @@
-import uicomponents.LoginFrame;
-import uicomponents.MainFrame;
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-
 /**
  * Entire application runs on App.
  * class is invoked by main to run on a single thread.
  */
 public class PasswordManager implements Runnable{
 
-    /**
-     * main method. Deals with all execution and UI controls.
-     */
+    // Runs the app. no documentation needed.
+    // App is very asynchronous, so the run method is basically a constructor.
     public void run(){
-        login();
+        // Creates new login window
+        LoginFrame loginFrame = new LoginFrame(this);
     }
 
-    // Functionality methods
-    void login() {
-        LoginFrame loginFrame = new LoginFrame();
-    }
+    /**
+     * verify if user exists. decrypts and start app if user and pass is correct.
+     * moves to main window if successful, tell login frame to display error otherwise.
+     * @param username
+     * @param password
+     */
+    public void verifyLogin(String username, String password){
 
+        //
+
+    }
     /*
     void logout(){}
     void addAccount(){}

@@ -1,5 +1,3 @@
-package uicomponents;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
@@ -9,10 +7,16 @@ public class LoginFrame extends JFrame{
     private JTextField textField1;
     private JPasswordField passwordField1;
 
+    private PasswordManager passwordManager;
+
     /**
      * Constructor class: creates login window
      */
-    public LoginFrame(){
+    public LoginFrame(PasswordManager caller){
+
+        //reference to caller
+        this.passwordManager = caller;
+
         //set GUi according to form
         add(rootPanel);
 
@@ -32,18 +36,8 @@ public class LoginFrame extends JFrame{
             // Get information from fields
             String username = textField1.getText();
             String password = String.valueOf(passwordField1.getPassword());
-            verifyLogin(username, password);
+            passwordManager.verifyLogin(username, password);
         }
-    }
-
-    void verifyLogin(String username, String password){
-        //TODO: add logic to verify login
-        if(username.contentEquals(password)){
-            System.out.println("yes");
-        } else {
-            System.out.println("no");
-        }
-
     }
 
 }
