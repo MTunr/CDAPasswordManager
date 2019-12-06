@@ -1,22 +1,13 @@
 import uicomponents.LoginFrame;
-
+import uicomponents.MainFrame;
 import javax.swing.*;
-
-/**
- * Main class
- */
-public class PasswordManager{
-    public static void main(String[] args) {
-        App passwordManagerApp = new App();
-        SwingUtilities.invokeLater(passwordManagerApp);
-    }
-}
+import java.awt.event.ActionEvent;
 
 /**
  * Entire application runs on App.
  * class is invoked by main to run on a single thread.
  */
-class App implements Runnable{
+public class PasswordManager implements Runnable{
 
     /**
      * main method. Deals with all execution and UI controls.
@@ -26,10 +17,11 @@ class App implements Runnable{
     }
 
     // Functionality methods
-    void login(){
+    void login() {
         LoginFrame loginFrame = new LoginFrame();
     }
 
+    /*
     void logout(){}
     void addAccount(){}
     void deleteAccount(){}
@@ -41,4 +33,5 @@ class App implements Runnable{
     void setAddWindow(){}
     void setConfirmWindow(){}
     void setMainWindow(){}
+     */
 }
