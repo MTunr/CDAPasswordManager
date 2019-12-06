@@ -11,41 +11,54 @@ public class MainFrame extends JFrame{
     private JButton deleteButton;
 
     private PasswordManager passwordManager;
-
+    private AddFrame addFrame;
+    /**
+     * Constructor
+     * @param caller reference to caller object (PasswordManager).
+     */
     public MainFrame(PasswordManager caller){
         //assign reference to caller
         this.passwordManager = caller;
 
-        // default window size and visibility settings
+        //set gui according to form
         add(rootPanel);
+
+        // default window size and visibility settings
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500,700);
+        setSize(700,600);
         setVisible(true);
 
+        //set frame to be at center of screen
+        setLocationRelativeTo(null);
+
         //set listeners for buttons
-        addButton.addActionListener(new AddListener());
-        deleteButton.addActionListener(new DeleteListener());
+        addButton.addActionListener(new AddListener(this));
         searchButton.addActionListener(new SearchListener());
         logoutButton.addActionListener(new LogoutListener());
     }
 
+    // ----- Functional Methods ----- //
+    //TODO: implement
+    void addAccount(String serviceName, String username, String Password){
+        // TODO : implement method to update table, procedually adding buttons and details.
+    }
+
     // ----- Listener classes ----- //
     class AddListener extends AbstractAction{
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
-        }
-    }
-    class DeleteListener extends AbstractAction{
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
 
+        // create Frame reference for the add window.
+        MainFrame mainFrame;
+        public AddListener(MainFrame caller){
+            mainFrame = caller;
         }
-    }
-    class SearchListener extends AbstractAction{
+
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            // Opens new AddFrame to add account
+            addFrame = new AddFrame(mainFrame);
         }
     }
+
     class LogoutListener extends AbstractAction{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
@@ -55,4 +68,12 @@ public class MainFrame extends JFrame{
             }
         }
     }
+
+    //TODO: implement
+    class SearchListener extends AbstractAction{
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+        }
+    }
+
 }

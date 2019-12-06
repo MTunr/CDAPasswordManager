@@ -12,7 +12,7 @@ public class LoginFrame extends JFrame{
 
     /**
      * Constructor class: creates login window
-     * @param caller reference to object that created this class
+     * @param caller reference caller object (PasswordManager).
      */
     public LoginFrame(PasswordManager caller){
 
@@ -28,11 +28,18 @@ public class LoginFrame extends JFrame{
         setResizable(false);
         setVisible(true);
 
+        //set frame to be at center of screen
+        setLocationRelativeTo(null);
+
         // set event listener for button
-        loginButton.addActionListener(new ButtonListener());
+        loginButton.addActionListener(new LoginListener());
     }
 
-    class ButtonListener extends AbstractAction{
+    /**
+     * Button action listener. actionPerformed method gets called if user hits button
+     * listener logs in the user by calling verifyLogin from PasswordManager class.
+     */
+    class LoginListener extends AbstractAction{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             // Get information from fields

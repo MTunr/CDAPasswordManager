@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-public class AddWindow extends JWindow{
+public class AddFrame extends JFrame{
     private JButton addButton;
     private JButton cancelButton;
     private JTextField serviceField;
@@ -15,16 +15,20 @@ public class AddWindow extends JWindow{
      * Constructor
      * @param caller reference to MainFrame caller
      */
-    public AddWindow(MainFrame caller){
+    public AddFrame(MainFrame caller){
+
         //set reference to main app.
         this.mainFrame = caller;
+
+        //Disable mainFrame until user adds/cancels
+        mainFrame.setEnabled(false);
 
         //set gui according to form
         add(rootPanel);
 
         //size and visibility settings
-        setSize(400,250);
-        setVisible(true);
+        setSize(300,150);
+
 
         //set frame to be at center of screen
         setLocationRelativeTo(null);
@@ -32,6 +36,9 @@ public class AddWindow extends JWindow{
         // Set button listeners
         cancelButton.addActionListener(new CancelListener());
         addButton.addActionListener(new AddListener());
+
+        setUndecorated(true);
+        setVisible(true);
     }
 
     // ----- Listener classes ----- //
@@ -39,7 +46,8 @@ public class AddWindow extends JWindow{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             // closes frame, but not application.
-            AddWindow.super.dispose();
+            mainFrame.setEnabled(true);
+            AddFrame.super.dispose();
         }
     }
 
@@ -52,8 +60,9 @@ public class AddWindow extends JWindow{
             String password = passwordField.getText();
 
             // tell mainframe to add account and dispose of self.
+            mainFrame.setEnabled(true);
             mainFrame.addAccount(serviceName, username, password);
-            AddWindow.super.dispose();
+            AddFrame.super.dispose();
         }
     }
 
