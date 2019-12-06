@@ -75,6 +75,7 @@
         <item itemvalue="Application.PasswordManagerRunner" />
         <item itemvalue="Application.PasswordManager" />
         <item itemvalue="Application.CDADebugger" />
+        <item itemvalue="Application.PasswordManager" />
       </list>
     </recent_temporary>
   </component>
