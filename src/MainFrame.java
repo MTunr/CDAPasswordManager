@@ -8,10 +8,8 @@ public class MainFrame extends JFrame{
     private JButton searchButton;
     private JButton logoutButton;
     private JButton addButton;
-    private JButton deleteButton;
 
     private PasswordManager passwordManager;
-    private AddFrame addFrame;
     /**
      * Constructor
      * @param caller reference to caller object (PasswordManager).
@@ -27,6 +25,7 @@ public class MainFrame extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(700,600);
         setVisible(true);
+        setTitle("CDA Password Manager");
 
         //set frame to be at center of screen
         setLocationRelativeTo(null);
@@ -44,9 +43,13 @@ public class MainFrame extends JFrame{
     }
 
     // ----- Listener classes ----- //
-    class AddListener extends AbstractAction{
 
-        // create Frame reference for the add window.
+    /**
+     * Listener for the add button. creates a new frame to input account details
+     */
+    static class AddListener extends AbstractAction{
+
+        // Set reference to main frame (for button)
         MainFrame mainFrame;
         public AddListener(MainFrame caller){
             mainFrame = caller;
@@ -55,15 +58,20 @@ public class MainFrame extends JFrame{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             // Opens new AddFrame to add account
-            addFrame = new AddFrame(mainFrame);
+            AddFrame addFrame = new AddFrame(mainFrame);
         }
     }
 
+    /**
+     * Listener for Logout button. creates dialog window to confirm exit.
+     */
     class LogoutListener extends AbstractAction{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            int confirmResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?");
-            if (confirmResult == JOptionPane.YES_OPTION){
+            // create dialog window.
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?", "confirm Logout", JOptionPane.YES_NO_OPTION);
+            // Logout if yes button is pressed. otherwise, do nothing.
+            if (dialogResult == JOptionPane.YES_OPTION){
                 passwordManager.logout();
             }
         }
