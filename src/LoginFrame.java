@@ -31,22 +31,9 @@ public class LoginFrame extends JFrame{
         //set frame to be at center of screen
         setLocationRelativeTo(null);
 
-        // set event listener for button
-        loginButton.addActionListener(new LoginListener());
-    }
-
-    /**
-     * Button action listener. actionPerformed method gets called if user hits button
-     * listener logs in the user by calling verifyLogin from PasswordManager class.
-     */
-    class LoginListener extends AbstractAction{
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
-            // Get information from fields
-            String username = textField1.getText();
-            String password = String.valueOf(passwordField1.getPassword());
-            passwordManager.verifyLogin(username, password);
-        }
+        // Button settings
+        getRootPane().setDefaultButton(loginButton); // set ENTER key to 'click' the login button
+        loginButton.addActionListener(new LoginListener()); // set listener.
     }
 
     /**
@@ -54,5 +41,26 @@ public class LoginFrame extends JFrame{
      */
     public void displayWrongLogin(){
         invalidLabel.setText("Invalid login details");
+    }
+
+    /**
+     * Logs the user in
+     */
+    public void login(){
+        String username = textField1.getText();
+        String password = String.valueOf(passwordField1.getPassword());
+        passwordManager.verifyLogin(username, password);
+    }
+
+    // ----- Listeners ----- //
+
+    /**
+     * Login button listener. calls login().
+     */
+    class LoginListener extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            login();
+        }
     }
 }
