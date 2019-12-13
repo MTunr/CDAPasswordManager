@@ -66,4 +66,14 @@ public class Account {
     public ArrayList<String> getRecoveryKeys() {
         return Objects.requireNonNullElseGet(recoveryKeys, ArrayList::new);
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "serviceName='" + serviceName + '\'' +
+                ", password='" + password + '\'' +
+                ", description='" + description + '\'' +
+                ", recoveryKeys=" + recoveryKeys +
+                '}';
+    }
 }

@@ -16,6 +16,12 @@ import java.lang.*;
 import java.math.BigInteger;
 import java.util.Random;
 
+/**
+ * CDA Implementation (C***k D**k A**-c**********g)
+ * A very slow cryptographic algorithm. Re
+ *
+ * Author: Jarret Jheng Ch'ng
+ */
 public class CDA {
     private static final int DEFAULT_ITERATIONS = 64;
     private static final int DEFAULT_KEY_HASH_LENGTH = 30;
