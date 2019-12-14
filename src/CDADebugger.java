@@ -34,5 +34,7 @@ public class CDADebugger {
             a.printStackTrace();
         }
 
+        // Sample file name generation
+        System.out.println("File name: " + LoginHandler.findFile("tunr","monash"));
     }
 }
