@@ -16,11 +16,9 @@ public class MainFrame extends JFrame{
     private JButton addButton;
     private JButton deleteSelectedButton;
 
-    private AddFrame addFrame;
     private PasswordManager passwordManager;
     private ArrayList<Account> accountList;
 
-    // set to true to enter edit mode
     private boolean isEditing = false;
 
     /**
@@ -124,12 +122,10 @@ public class MainFrame extends JFrame{
         int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?", "confirm Logout", JOptionPane.YES_NO_OPTION);
         // Logout if yes button is pressed. otherwise, do nothing.
         if (dialogResult == JOptionPane.YES_OPTION){
-
             // parse accountList here
             for (int i = 0; i < accountsTable.getRowCount(); i++){
                 //TODO: convert table contents to accountList.
             }
-
             passwordManager.logout();
         }
     }
@@ -141,16 +137,13 @@ public class MainFrame extends JFrame{
      * @param password
      */
     void addAccount(String serviceName, String username, String password){
-
     }
 
     /**
      * Deletes account selected by the user
      */
     void deleteSelected(){
-
     }
-
 
     // ----- Button Listener Classes ----- //
     /**
@@ -175,7 +168,7 @@ public class MainFrame extends JFrame{
         }
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            addFrame = new AddFrame(mainFrame);
+            AddFrame addFrame = new AddFrame(mainFrame);
         }
     }
 

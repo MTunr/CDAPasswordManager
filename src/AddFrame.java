@@ -43,7 +43,7 @@ public class AddFrame extends JFrame{
     void cancel(){
         // closes frame, but not application.
         mainFrame.setEnabled(true);
-        AddFrame.super.dispose();
+        dispose(); // kill frame
     }
 
     /**
@@ -58,7 +58,7 @@ public class AddFrame extends JFrame{
         // tell mainframe to add account and dispose of self.
         mainFrame.setEnabled(true);
         mainFrame.addAccount(serviceName, username, password);
-        AddFrame.super.dispose();
+        dispose(); // kill frame
     }
 
     // ----- Listener classes ----- //

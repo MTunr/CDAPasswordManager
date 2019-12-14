@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b428abc3-9ccc-4eeb-a1de-b86ff405cc52" name="Default Changelist" comment="Add hashing algorithm for keys">
-<<<<<<< Updated upstream
-      <change afterPath="$PROJECT_DIR$/src/LoginHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CDA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CDADebugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CDADebugger.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CDAPasswordManager/PasswordManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CDAPasswordManager/PasswordManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PasswordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PasswordManager.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,13 +110,8 @@
       <workItem from="1575426761037" duration="23472000" />
       <workItem from="1575947789324" duration="1749000" />
       <workItem from="1576114896492" duration="10330000" />
-<<<<<<< Updated upstream
-      <workItem from="1576231164624" duration="5887000" />
-      <workItem from="1576317021444" duration="3708000" />
-=======
       <workItem from="1576231164624" duration="5638000" />
-      <workItem from="1576312783651" duration="10588000" />
->>>>>>> Stashed changes
+      <workItem from="1576323612330" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1575092976879</created>
@@ -187,31 +172,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="521" y="254" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1575611022811" />
-    <state x="718" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1576321229269">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="718" y="152" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576321229269" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1575608093107" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1576231336354" />
-<<<<<<< Updated upstream
-    <state x="571" y="308" width="393" height="223" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576320714679">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1576231336354">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="571" y="308" width="393" height="223" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1576320714679" />
-=======
-    <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576312922350">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576312922350" />
->>>>>>> Stashed changes
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1575608093107" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1576231336354" />
     <state x="125" y="88" width="1174" height="522" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1575610351930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="125" y="88" width="1174" height="522" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1575610351930" />
-    <state x="624" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576319788183">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575432848016">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="624" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576319788183" />
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1575432848016" />
     <state x="520" y="281" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1575608726440">
       <screen x="0" y="0" width="1536" height="824" />
@@ -227,73 +199,50 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575092042921" />
     <state x="549" y="169" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1575951172658" />
-<<<<<<< Updated upstream
-    <state width="1493" height="233" key="GridCell.Tab.0.bottom" timestamp="1576321716350">
-      <screen x="0" y="0" width="1536" height="834" />
-=======
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1576323381882">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1576323838511">
       <screen x="0" y="0" width="1920" height="1040" />
->>>>>>> Stashed changes
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323381882" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323838511" />
     <state width="1493" height="104" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575949237565" />
-<<<<<<< Updated upstream
-    <state width="1493" height="233" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1576321716350" />
-    <state width="1493" height="233" key="GridCell.Tab.0.center" timestamp="1576321716350">
-      <screen x="0" y="0" width="1536" height="834" />
-=======
     <state width="1493" height="300" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1576236870534" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1576323381882">
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1576323838511">
       <screen x="0" y="0" width="1920" height="1040" />
->>>>>>> Stashed changes
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323381882" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323838511" />
     <state width="1493" height="104" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575949237564" />
-<<<<<<< Updated upstream
-    <state width="1493" height="233" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1576321716350" />
-    <state width="1493" height="233" key="GridCell.Tab.0.left" timestamp="1576321716349">
-      <screen x="0" y="0" width="1536" height="834" />
-=======
     <state width="1493" height="300" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1576236870533" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1576323381882">
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1576323838511">
       <screen x="0" y="0" width="1920" height="1040" />
->>>>>>> Stashed changes
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323381882" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323838511" />
     <state width="1493" height="104" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575949237563" />
-<<<<<<< Updated upstream
-    <state width="1493" height="233" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1576321716349" />
-    <state width="1493" height="233" key="GridCell.Tab.0.right" timestamp="1576321716350">
-      <screen x="0" y="0" width="1536" height="834" />
-=======
     <state width="1493" height="300" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1576236870533" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1576323381882">
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1576323838511">
       <screen x="0" y="0" width="1920" height="1040" />
->>>>>>> Stashed changes
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323381882" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323838511" />
     <state width="1493" height="104" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575949237565" />
-    <state width="1493" height="233" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1576321716350" />
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1576319378662">
+    <state width="1493" height="300" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1576236870533" />
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1576236594708">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="81" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575619174400" />
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1576319378662" />
-    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1576319378662">
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1576236594708" />
+    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1576236594707">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="81" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1575619174400" />
-    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1576319378662" />
-    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1576319378661">
+    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1576236594707" />
+    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1576236594707">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="81" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1575619174400" />
-    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1576319378661" />
-    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1576319378662">
+    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1576236594707" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1576236594708">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="81" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1575619174400" />
-    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1576319378662" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1576236594708" />
     <state x="481" y="133" key="MultipleFileMergeDialog" timestamp="1575254052350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -311,38 +260,25 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1576236694524" />
-    <state x="588" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1576312918242">
+    <state x="588" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1576323612076">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="588" y="298" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576312918242" />
+    <state x="588" y="298" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576323612076" />
     <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575947799802" />
     <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575427767255" />
     <state x="470" y="208" key="git4idea.merge.GitPullDialog" timestamp="1575255320764">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="470" y="208" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1575255320764" />
-    <state x="531" y="236" width="672" height="677" key="run.anything.popup" timestamp="1576321459869">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1576232300665">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="531" y="236" width="672" height="677" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576321459869" />
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1575610560590" />
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1576232300665" />
-    <state x="539" y="193" width="840" height="846" key="search.everywhere.popup" timestamp="1576314417852">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1576236276153">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="539" y="193" width="840" height="846" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1576314417852" />
     <state x="431" y="153" width="672" height="670" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575948925194" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1576236276153" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CDA.java</url>
-          <line>184</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
