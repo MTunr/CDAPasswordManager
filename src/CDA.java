@@ -12,9 +12,13 @@
  *
  * Author: Jheng Jheng Ch'ng
  */
+import java.io.UnsupportedEncodingException;
 import java.lang.*;
 import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
+
 
 /**
  * CDA Implementation (C***k D**k A**-c**********g)
@@ -49,8 +53,6 @@ public class CDA {
          */
         shrunkHashedKey = hashedKey.longValue();
 
-//         Instantiating Random with the long hashed key;
-//        rand = new Random(shrunkHashedKey);
         this.iterations = iterations;
     }
 
@@ -70,7 +72,28 @@ public class CDA {
      * @return The encrypted plaintext as a string
      */
     public String encrypt(String plainText){
-        return encrypt(plainText, true);
+        String md5 = shortMD5(plainText);
+        return encrypt(plainText + md5, true);
+    }
+
+    /**
+     * Gets the MD5 digest of the input string. Integrity check.
+     * @param input String to get the digest of
+     * @return 10 Character MD5 of input
+     */
+    public static String shortMD5(String input){
+        String md5 = null;
+
+        // Referenced from: https://stackoverflow.com/questions/5470219/get-md5-string-from-message-digest
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] md5sum = md.digest(input.getBytes());
+            md5 = String.format("%032X", new BigInteger(1, md5sum));
+        } catch (NoSuchAlgorithmException e){
+            e.getStackTrace();
+        }
+
+        return md5.substring(0,10);
     }
 
     /**
@@ -149,12 +172,17 @@ public class CDA {
     }
 
     /**
-     * Decrypts cipher text
+     * Decrypts cipher text. Only returns contents if valid, else blank
      * @param cipherText The given cipher text as a string
      * @return Plaintext
      */
     public String decrypt(String cipherText){
-        return decrypt(cipherText,true);
+        String decrypted = decrypt(cipherText,true);
+        String decryptedMD5 = decrypted.substring(cipherText.length()-10);
+        String contents = decrypted.substring(0,cipherText.length()-10);
+        String actualMD5 = shortMD5(contents);
+
+        return decryptedMD5.equals(actualMD5) ? contents : "";
     }
 
     /**
