@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Entire application runs on App.
  * class is invoked by main to run on a single thread.
@@ -8,9 +10,13 @@ public class PasswordManager implements Runnable{
     LoginFrame loginFrame;
     MainFrame mainFrame;
 
+    //Account list
+    ArrayList<Account> accountList;
+
     // Runs the app. no documentation needed.
     // App is very asynchronous, so the run method is basically a constructor.
     public void run(){
+        accountList = new ArrayList<Account>();
         // Creates new login window
         login();
     }
@@ -27,7 +33,13 @@ public class PasswordManager implements Runnable{
      */
     void logout(){
         mainFrame.dispose();
-        this.loginFrame = new LoginFrame(this);
+        login();
+    }
+
+    void loadMain(){
+        //TODO: add list of accounts to mainframe constructor
+        accountList = new ArrayList<Account>();
+        this.mainFrame = new MainFrame(this, accountList);
     }
 
     /**
@@ -52,13 +64,5 @@ public class PasswordManager implements Runnable{
         } else {
             loginFrame.displayWrongLogin();
         }
-    }
-
-    /**
-     * Loads main application with valid login details
-     */
-    void loadMain(){
-        //TODO: add file reading and CDA to this method (to load main window)
-        this.mainFrame = new MainFrame(this);
     }
 }

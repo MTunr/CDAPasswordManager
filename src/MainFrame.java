@@ -1,64 +1,181 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
+
+/**
+ * Main window of CDA Password Manager
+ */
 public class MainFrame extends JFrame{
-    private JTable table1;
+    private JTable accountsTable;
     private JPanel rootPanel;
-    private JTextField searchField;
-    private JButton searchButton;
     private JButton logoutButton;
+    private JButton editButton;
+    private JButton hidePasswordsButton;
     private JButton addButton;
+    private JButton deleteSelectedButton;
 
+    private AddFrame addFrame;
     private PasswordManager passwordManager;
+    private ArrayList<Account> accountList;
+
+    // set to true to enter edit mode
+    private boolean isEditing = false;
+
     /**
      * Constructor
      * @param caller reference to caller object (PasswordManager).
      */
-    public MainFrame(PasswordManager caller){
-        //assign reference to caller
-        this.passwordManager = caller;
+    public MainFrame(PasswordManager caller, ArrayList<Account> accountsInput){
+        //set references to PasswordManager elements
+        accountList = accountsInput;
+        passwordManager = caller;
 
-        //set gui according to form
+        // take form data to frame
         add(rootPanel);
 
         // default window size and visibility settings
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(700,600);
+        setResizable(false);
         setVisible(true);
         setTitle("CDA Password Manager");
-
-        //set frame to be at center of screen
-        setLocationRelativeTo(null);
+        addButton.setVisible(false);
+        deleteSelectedButton.setVisible(false);
+        setLocationRelativeTo(null); //set frame to be at center of screen
 
         //set listeners for buttons
-        addButton.addActionListener(new AddListener(this));
-        searchButton.addActionListener(new SearchListener());
         logoutButton.addActionListener(new LogoutListener());
-    }
+        editButton.addActionListener(new EditListener());
+        addButton.addActionListener(new AddListener(this));
 
-    // ----- Functional Methods ----- //
-    //TODO: implement
-    void addAccount(String serviceName, String username, String Password){
-        // TODO : implement method to update table, procedually adding buttons and details.
+        //setup table
+        String[] columnNames = {"Service", "Username", "Password", "Recovery Keys"};
+        setupTable(columnNames);
+        //
+        System.out.println(accountList);
     }
-
-    // ----- Listener classes ----- //
 
     /**
-     * Listener for the add button. creates a new frame to input account details
+     * Sets up table with column names and row data
+     * @param columnNames text on column headers
      */
-    static class AddListener extends AbstractAction{
+    void setupTable(Object[] columnNames /*, account list*/){
+        // Initial table prevents cell editing
+        DefaultTableModel tableModel = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        accountsTable.setModel(tableModel);
+        accountsTable.setRowSelectionAllowed(false);
+        accountsTable.setCellSelectionEnabled(false);
 
-        // Set reference to main frame (for button)
-        MainFrame mainFrame;
-        public AddListener(MainFrame caller){
-            mainFrame = caller;
+        //Setup columns
+        for (Object columnName : columnNames) {
+            tableModel.addColumn(columnName);
         }
 
+        //TODO: get data from accounts list
+        for(int i = 0; i < accountList.size(); i++){
+            Object[] rowData = {
+                    accountList.get(i).getServiceName(),
+                    accountList.get(i).getServiceName(),
+                    accountList.get(i).getServiceName(),
+                    accountList.get(i).getServiceName()
+            };
+            tableModel.addRow(rowData);
+        }
+    }
+
+    /**
+     * Sets the frame to edit mode.
+     * Edit mode enables adding and deleting rows.
+     */
+    void changeEditMode() {
+        if (isEditing){
+            isEditing = false;
+            addButton.setVisible(false);
+            deleteSelectedButton.setVisible(false);
+            logoutButton.setVisible(true);
+            hidePasswordsButton.setVisible(true);
+            editButton.setText("Edit");
+            super.setTitle("CDA Password Manager");
+        } else {
+            isEditing = true;
+            addButton.setVisible(true);
+            deleteSelectedButton.setVisible(true);
+            logoutButton.setVisible(false);
+            hidePasswordsButton.setVisible(false);
+            editButton.setText("Finish Editing");
+
+            super.setTitle("CDA Password Manager - Edit Mode");
+        }
+    }
+
+    /**
+     * Logs the user out, saves the account data into accountList.
+     * PasswordManager will handle encrypting.
+     */
+    void logout(){
+        // create dialog window.
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?", "confirm Logout", JOptionPane.YES_NO_OPTION);
+        // Logout if yes button is pressed. otherwise, do nothing.
+        if (dialogResult == JOptionPane.YES_OPTION){
+
+            // parse accountList here
+            for (int i = 0; i < accountsTable.getRowCount(); i++){
+                //TODO: convert table contents to accountList.
+            }
+
+            passwordManager.logout();
+        }
+    }
+
+    /**
+     * Adds new account to the list
+     * @param serviceName
+     * @param username
+     * @param password
+     */
+    void addAccount(String serviceName, String username, String password){
+
+    }
+
+    /**
+     * Deletes account selected by the user
+     */
+    void deleteSelected(){
+
+    }
+
+
+    // ----- Button Listener Classes ----- //
+    /**
+     * Listener for Delete Selected Button.
+     * Deletes rows selected by User.
+     */
+    class DeleteListener extends AbstractAction{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            // Opens new AddFrame to add account
-            AddFrame addFrame = new AddFrame(mainFrame);
+            deleteSelected();
+        }
+    }
+
+    /**
+     * Listener for Add Button.
+     * pops a new AddFrame to input details
+     */
+    class AddListener extends AbstractAction{
+        MainFrame mainFrame;
+        public AddListener(MainFrame caller){
+            mainFrame = caller; // assign reference to caller MainFrame
+        }
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            addFrame = new AddFrame(mainFrame);
         }
     }
 
@@ -68,20 +185,17 @@ public class MainFrame extends JFrame{
     class LogoutListener extends AbstractAction{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            // create dialog window.
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?", "confirm Logout", JOptionPane.YES_NO_OPTION);
-            // Logout if yes button is pressed. otherwise, do nothing.
-            if (dialogResult == JOptionPane.YES_OPTION){
-                passwordManager.logout();
-            }
+            logout();
         }
     }
 
-    //TODO: implement
-    class SearchListener extends AbstractAction{
+    /**
+     * Listener for Edit button. Changes the frame to edit mode.
+     */
+    class EditListener extends AbstractAction{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            changeEditMode();
         }
     }
-
 }
