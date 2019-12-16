@@ -32,6 +32,7 @@ public class PasswordManager implements Runnable{
      * Destroys main window, creates new login window
      */
     void logout(){
+        //TODO: add encryption logic and destroy accountList here.
         mainFrame.dispose();
         login();
     }
