@@ -22,6 +22,15 @@ public class PasswordManager implements Runnable{
     }
 
     /**
+     * create a new user file.
+     * @param username username of new user
+     * @param password password of new user
+     */
+    public void newUser(String username, String password){
+
+    }
+
+    /**
      * Creates a new login window
      */
     void login(){
@@ -37,6 +46,9 @@ public class PasswordManager implements Runnable{
         login();
     }
 
+    /**
+     * Loads main window (frame) and account details.
+     */
     void loadMain(){
         //TODO: add list of accounts to mainframe constructor
         accountList = new ArrayList<Account>();

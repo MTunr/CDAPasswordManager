@@ -7,8 +7,10 @@ public class LoginFrame extends JFrame{
     private JTextField textField1;
     private JPasswordField passwordField1;
     private JLabel invalidLabel;
+    private JButton newUserButton;
 
     private PasswordManager passwordManager;
+    private NewUserFrame newUserFrame;
 
     /**
      * Constructor class: creates login window
@@ -34,6 +36,7 @@ public class LoginFrame extends JFrame{
         // Button settings
         getRootPane().setDefaultButton(loginButton); // set ENTER key to 'click' the login button
         loginButton.addActionListener(new LoginListener()); // set listener.
+        newUserButton.addActionListener(new NewUserListener());
     }
 
     /**
@@ -52,6 +55,13 @@ public class LoginFrame extends JFrame{
         passwordManager.verifyLogin(username, password);
     }
 
+    /**
+     * opens new user frame to deal with creating new user
+     */
+    void newUser(){
+        newUserFrame = new NewUserFrame(passwordManager, this);
+    }
+
     // ----- Listeners ----- //
 
     /**
@@ -61,6 +71,16 @@ public class LoginFrame extends JFrame{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             login();
+        }
+    }
+
+    /**
+     * new user button listener. calls newUser();
+     */
+    class NewUserListener extends AbstractAction{
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            newUser();
         }
     }
 }
