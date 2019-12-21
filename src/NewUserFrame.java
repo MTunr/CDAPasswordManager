@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 public class NewUserFrame extends JFrame{
     private JPanel rootPanel;
@@ -32,15 +31,18 @@ public class NewUserFrame extends JFrame{
         loginFrame.setEnabled(false);
 
         //size and visibility settings
-        setSize(400,300);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(400,250);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
-        setVisible(true);
         setLocationRelativeTo(null); //set frame to be at center of screen
 
         // Setup button listeners
         cancelButton.addActionListener(new CancelListener());
         createButton.addActionListener(new ConfirmListener());
+
+        // remove X button
+        setUndecorated(true);
+        setVisible(true);
     }
 
     /**
@@ -101,11 +103,13 @@ public class NewUserFrame extends JFrame{
     /**
      * runs when confirm button is clicked.
      * tells password manager to create new acocunt if inputs are valid.
-     * if inputs are invalid, user is given a warning text.
+     * if inputs are invalid, user is given a warning text depending on the input.
      */
     void confirm(){
         // valid input procedure
-        if (verifyInput().contains(validity.VALID_INPUT)){
+        ArrayList<validity> verifyResult = verifyInput();
+
+        if (verifyResult.contains(validity.VALID_INPUT)){
             // get information from fields
             String username = usernameField.getText();
             String password = String.valueOf(passwordField.getPassword());
@@ -113,9 +117,29 @@ public class NewUserFrame extends JFrame{
             passwordManager.newUser(username, password);
             // Kill frame
             loginFrame.setEnabled(true);
+
+            //create confirmation dialog
+            String message = "New user " + username + " created.";
+            JOptionPane.showMessageDialog(null, message);
             dispose();
+        } else {
+            // set text in warning label
+            String message = "<html>";
+           if (verifyResult.contains(validity.EMPTY_FIELD)) {
+               message = message.concat("Please fill in all the fields.<br/>");
+           }
+           if (verifyResult.contains(validity.PASSWORD_MISMATCH)) {
+               message = message.concat("Passwords do not match.<br/>");
+           }
+           if (verifyResult.contains(validity.INVALID_PASSWORD)) {
+               message = message.concat("Password must be at least 10 characters.<br/>");
+           }
+           if (verifyResult.contains(validity.INVALID_USERNAME)) {
+               message = message.concat("Username may only contain [A-Z], [a-z], [0-9] and [_ @ - .] <br/>");
+           }
+           message = message.concat("</html>");
+           warningLabel.setText(message);
         }
-        //TODO: deal with output.
     }
 
     void cancel(){
